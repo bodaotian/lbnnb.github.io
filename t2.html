@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>组织成员介绍 - t2</title>
+
+  <style>
+    body{
+      margin:0;
+      padding:0;
+      background:#f8f8ff;
+      height:100vh;
+      overflow:hidden;
+      font-family:"Microsoft Yahei", Arial, sans-serif;
+    }
+
+    .name{
+      position:absolute;
+      padding:12px 18px;
+      background:#eaeaff;
+      border-radius:16px;
+      border:1px solid #aaa;
+      box-shadow:0 4px 10px rgba(0,0,0,0.15);
+      font-size:18px;
+      transition:0.25s;
+      user-select:none;
+    }
+
+    .name:hover{
+      transform:scale(1.1);
+      background:#d8d8ff;
+    }
+
+    .back{
+      position:fixed;
+      bottom:20px;
+      left:50%;
+      transform:translateX(-50%);
+      padding:10px 18px;
+      background:#dcdcff;
+      border-radius:10px;
+      border:1px solid #888;
+      text-decoration:none;
+      color:#000;
+      font-size:16px;
+    }
+
+    .back:hover{
+      background:#c8c8ff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 六个名字 -->
+  <div class="name">田博德</div>
+  <div class="name">路人贾</div>
+  <div class="name">弓长瑞</div>
+  <div class="name">毒死鱼</div>
+  <div class="name">牛梨园</div>
+  <div class="name">橙慈悯</div>
+
+  
+
+  <script>
+    // 随机摆放名字
+    const names = document.querySelectorAll('.name');
+    const padding = 60; // 防止贴边
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    names.forEach(n => {
+      const x = Math.random() * (width - padding * 2) + padding;
+      const y = Math.random() * (height - padding * 2) + padding;
+      n.style.left = x + 'px';
+      n.style.top = y + 'px';
+    });
+  </script>
+
+</body>
+</html>
